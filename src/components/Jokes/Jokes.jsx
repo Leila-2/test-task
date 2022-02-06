@@ -8,14 +8,13 @@ export default function Jokes({ category }) {
   useEffect(() => {
     if (category === "") {
       api.fetchRandomJokes().then((resp) => {
-        console.log("random", resp);
+        // console.log("random", resp);
         //const randomIndex = Math.floor(Math.random() * resp.length);
         setRandomJoke(resp.value);
       });
     }
     api.fetchJokesByCategory(category).then((resp) => {
-      console.log("joke", resp.json);
-
+      //console.log("joke", resp.json);
       setJoke(resp.value);
     });
   });
