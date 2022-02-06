@@ -1,24 +1,25 @@
 import { useState, useEffect } from "react";
 import * as api from "../../services/chucknorris-api";
 
-export default function Jokes({ category }) {
+export default function Jokes({ category, logoImg }) {
   const [joke, setJoke] = useState("");
   const [randomJoke, setRandomJoke] = useState("");
 
   useEffect(() => {
-    if (category === "") {
-      api.fetchRandomJokes().then((resp) => {
-        setRandomJoke(resp.value);
+    if (!category === "") {
+      api.fetchJokesByCategory(category).then((resp) => {
+        setJoke(resp.value);
       });
     }
-    api.fetchJokesByCategory(category).then((resp) => {
-      setJoke(resp.value);
+    api.fetchRandomJokes().then((resp) => {
+      setRandomJoke(resp.value);
+      logoImg(resp.icon_url);
     });
-  }, [category]);
+  }, [category, logoImg]);
 
   return (
     <div>
-      <p>{joke ? joke : randomJoke}</p>
+      <p>{joke || randomJoke}</p>
     </div>
   );
 }
