@@ -7,7 +7,7 @@ export default function Categories({ changeCategory }) {
   useEffect(() => {
     api.fetchCategories().then((resp) => {
       setCategories(resp);
-    });
+    }, []);
   });
   return (
     <>
