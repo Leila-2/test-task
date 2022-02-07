@@ -22,7 +22,7 @@ export default function Jokes({ category, logoImg, random }) {
   return (
     <div>
       <Chuck image={chuck}> </Chuck>
-      <Joke>{random}</Joke>
+      <Joke>{randomJoke || joke || random}</Joke>
     </div>
   );
 }
