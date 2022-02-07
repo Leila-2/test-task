@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import * as api from "../../services/chucknorris-api";
+import { Chuck, Joke } from "./Jokes.styled";
+import chuck from "./chuck.png";
 
-export default function Jokes({ category, logoImg }) {
+export default function Jokes({ category, logoImg, random }) {
   const [joke, setJoke] = useState("");
   const [randomJoke, setRandomJoke] = useState("");
 
@@ -19,7 +21,8 @@ export default function Jokes({ category, logoImg }) {
 
   return (
     <div>
-      <p>{joke || randomJoke}</p>
+      <Chuck image={chuck}> </Chuck>
+      <Joke>{random}</Joke>
     </div>
   );
 }
