@@ -41,7 +41,7 @@ export const Category = styled.li`
     background-color: #422ed4;
     color: #fff;
   }
-  @media screen and (min-width: 370px) {
+  @media screen and (min-width: 280px) {
     &:not(:last-child) {
       margin: 0px 0px 20px 0px;
     }
