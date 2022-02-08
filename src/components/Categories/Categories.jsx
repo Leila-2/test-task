@@ -18,8 +18,8 @@ export default function Categories({ changeCategory }) {
 
   return (
     <>
-      <Title>Categories</Title>
       <Container>
+        <Title>Categories</Title>
         {categories && (
           <CategoriesList>
             {categories.map((category) => (

@@ -4,7 +4,13 @@ export const Container = styled.div`
   height: 59px;
   background: #422ed4;
   display: flex;
-  padding: 0px 160px;
+
+  @media screen and (min-width: 370px) {
+    padding: 0px 15px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 0px 160px;
+  }
 `;
 
 export const Logo = styled.img`
