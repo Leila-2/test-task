@@ -15,7 +15,7 @@ export const Joke = styled.p`
   position: relative;
   top: -105px;
 
-  width: 1120px;
+  max-width: 1120px;
   min-height: 160px;
   padding: 24px;
 
