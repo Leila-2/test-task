@@ -16,7 +16,8 @@ ul {
 body {
   min-height: 100vh;
  font-family: 'Raleway';
-  font-weight:800
+  font-weight:800;
+  
 }
 
 body,

@@ -46,3 +46,8 @@ export const Category = styled.li`
     color: #fff;
   }
 `;
+export const Container = styled.div`
+  max-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
+`;
