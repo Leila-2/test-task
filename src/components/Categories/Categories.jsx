@@ -15,11 +15,11 @@ export default function Categories({ changeCategory, changeRandom }) {
   // const category = categories.map((category) => {
   //   return category;
   // });
-  function getRandom() {
-    api.fetchRandomJokes().then((resp) => {
-      setRandom(resp.value);
-    });
-  }
+  // function getRandom() {
+  //   api.fetchRandomJokes().then((resp) => {
+  //     setRandom(resp.value);
+  //   });
+  // }
 
   useEffect(() => {
     api.fetchCategories().then((resp) => {
@@ -27,9 +27,9 @@ export default function Categories({ changeCategory, changeRandom }) {
     });
   }, []);
 
-  useEffect(() => {
-    getRandom();
-  }, []);
+  // useEffect(() => {
+  //   getRandom();
+  // }, []);
 
   // function getByCategory(category) {
   //   api.fetchJokesByCategory(category).then((res) => {
@@ -51,7 +51,7 @@ export default function Categories({ changeCategory, changeRandom }) {
                 {category}
               </Category>
             ))}
-            <Category onClick={() => changeRandom(random)}>random</Category>
+            <Category onClick={() => changeCategory("")}>random</Category>
           </CategoriesList>
         )}
       </Container>

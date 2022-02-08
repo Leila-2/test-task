@@ -16,7 +16,7 @@ export const Joke = styled.p`
   top: -105px;
 
   width: 1120px;
-  height: 160px;
+  min-height: 160px;
   padding: 24px;
 
   color: #fff;

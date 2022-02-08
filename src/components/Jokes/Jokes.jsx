@@ -5,16 +5,16 @@ import chuck from "./chuck.png";
 
 export default function Jokes({ category, logoImg, random }) {
   const [joke, setJoke] = useState("");
-  const [randomJoke, setRandomJoke] = useState("");
 
   useEffect(() => {
-    if (!category === "") {
+    if (category !== "") {
       api.fetchJokesByCategory(category).then((resp) => {
         setJoke(resp.value);
       });
+      return;
     }
     api.fetchRandomJokes().then((resp) => {
-      setRandomJoke(resp.value);
+      setJoke(resp.value);
       logoImg(resp.icon_url);
     });
   }, [category, logoImg]);
@@ -22,7 +22,7 @@ export default function Jokes({ category, logoImg, random }) {
   return (
     <div>
       <Chuck image={chuck}> </Chuck>
-      <Joke> {randomJoke || random || joke}</Joke>
+      <Joke> {joke}</Joke>
     </div>
   );
 }
